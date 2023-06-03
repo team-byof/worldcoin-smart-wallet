@@ -1,11 +1,11 @@
 'use client'
 import {useCallback} from 'react'
 import Background from './layouts/background'
-import { CredentialType, IDKitWidget, ISuccessResult } from "@worldcoin/idkit";
+import { CredentialType, IDKitWidget, ISuccessResult, solidityEncode } from "@worldcoin/idkit";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-const action = "byod"
-const appID = "app_ibyofd"
+const action = "byof"
+const appID = "app_staging_23b713ea1ef2e814d19b3550de74409f"
 const signal = "my_signal"
 const credentialType = CredentialType.Phone
 
@@ -50,8 +50,8 @@ export function Home(): JSX.Element {
       </div>
         <div className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
             <IDKitWidget
-              action={action}
-              signal={signal}
+              action={solidityEncode(['uint256'], [action])}
+              signal={solidityEncode(['address'], ["0xcCC05d9631e7B0F1E5629A62E79A9F1C84ad5dC5"])}
               onSuccess={onSuccess}
               handleVerify={handleProof}
               app_id={appID}
