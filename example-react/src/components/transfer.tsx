@@ -32,16 +32,31 @@ export default function Transfer() {
       <div className="flex flex-col text-center">
         <div className="space-y-2 flex flex-col items-center p-8">
           <h3 className="text-3xl text-gray-700 font-semibold text-center">
-            Transfer on {getChainName(location.state.chain)} 🚀
+            Swap on {getChainName(location.state.chain)} 🚀
           </h3>
+
         </div>
-        <div className='flex items-center mx-2'>
-            <label className="block mb-2 text-lg font-medium text-gray-700 mr-14">To:</label>
+        <div className='flex items-center mx-2 flex'>
+            <label className="block mb-2 text-lg font-medium text-gray-700  w-1/6">From</label>
+            <div className="bg-pink-100 border border-pink-100 text-gray-900 text-sm rounded-lg block w-full p-2.5 ml-10">
+              <img src="https://seeklogo.com/images/P/polygon-matic-logo-86F4D6D773-seeklogo.com.png" alt="matic" width={30} height={30} className="inline pr-2"></img>
+              MATIC
+            </div>
+        </div>
+        <div className='flex items-center mx-2 flex'>
+            <label className="block mb-2 text-lg font-medium text-gray-700  w-1/6">To</label>
+            <div className="bg-pink-100 border border-pink-100 text-gray-900 text-sm rounded-lg block w-full p-2.5 ml-10">
+              <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=025" alt="matic" width={30} height={30} className="inline pr-2"></img>
+              WETH
+            </div>
+        </div>
+        {/* <div className='flex items-center mx-2 flex'>
+            <label className="block mb-2 text-lg font-medium text-gray-700 mr-14  w-1/6">To:</label>
             <input className="bg-pink-100 border border-pink-100 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="0x2f318C334780961FB129D2a6c30D0763d9a5C970" required />
-        </div>
-        <div className='flex items-center mx-2 my-4'>
-            <label className="block mb-2 text-lg font-medium text-gray-700 mr-3">Amount:</label>
-            <input className="bg-pink-100 border border-pink-100 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="0" required />
+        </div> */}
+        <div className='flex items-center mx-2 my-4 flex'>
+            <label className="block mb-2 text-lg font-medium text-gray-700 mr-3 w-1/6">Amount:</label>
+            <input className="bg-pink-100 border border-pink-100 text-gray-900 text-sm text-center rounded-lg block w-full p-2.5 ml-4" placeholder="0" required />
         </div>
         <button className="py-4 h-1/6 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickBack}>
           <span className="text-2xl">Back</span>
