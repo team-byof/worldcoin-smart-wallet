@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Register from "./components/register";
+import RegisterSuccess from "./components/registerSuccess";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 	{
 		path: "/register",
 		element: <Register />
+	},
+	{
+		path: "/register/success",
+		element: <RegisterSuccess />
 	}
 ]);
 
