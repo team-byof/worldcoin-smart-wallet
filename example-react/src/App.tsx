@@ -50,8 +50,8 @@ export function Home(): JSX.Element {
       </div>
         <div className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
             <IDKitWidget
-              action={solidityEncode(['uint256'], [action])}
-              signal={solidityEncode(['address'], ["0xcCC05d9631e7B0F1E5629A62E79A9F1C84ad5dC5"])}
+              action={action}
+              signal={"0x7730809Fde523F8A8b064787Aa32Eb0df40768fC"}
               onSuccess={onSuccess}
               handleVerify={handleProof}
               app_id={appID}
