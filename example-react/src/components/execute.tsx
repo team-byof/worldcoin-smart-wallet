@@ -37,8 +37,8 @@ export default function Home() {
     navigate('/register')
   }
 
-  const onClickTransfer = () => {
-    navigate('/transfer')
+  const onClickTransfer = (chain: "polygon" | "gnosis" | "near") =>  {
+    navigate('/transfer', {state:{chain:chain}})
   }
 
   return (
@@ -59,13 +59,13 @@ export default function Home() {
         <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickRegister}>
           <span className="text-2xl">Register</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("polygon")}>
           <span className="text-2xl">Transfer on Polygon</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("gnosis")}>
           <span className="text-2xl">Transfer on Gnosis Chain <br />(via bridge)</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("near")}>
           <span className="text-2xl">Transfer on Aurora / Near <br />(via bridge)</span>
         </button>
       </div>
