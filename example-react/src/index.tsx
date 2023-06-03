@@ -1,5 +1,6 @@
 import App from "./App";
 import Execute from "./components/execute"
+import Transfer from "./components/transfer"
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
@@ -7,6 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Register from "./components/register";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
 	{
 		path: "/execute",
 		element: <Execute />
+	},
+	{
+		path: "/transfer",
+		element: <Transfer />
+	},
+	{
+		path: "/register",
+		element: <Register />
 	}
 ]);
 

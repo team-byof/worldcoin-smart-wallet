@@ -32,6 +32,15 @@ export default function Home() {
     localStorage.clear()
     navigate('/')
   }
+
+  const onClickRegister = () => {
+    navigate('/register')
+  }
+
+  const onClickTransfer = () => {
+    navigate('/transfer')
+  }
+
   return (
     <Background>
       <div className="flex flex-col text-center">
@@ -47,16 +56,16 @@ export default function Home() {
           Bye bye private keys! 👋 <br /> <br />Chain-agnostic account abstraction wallet using Worldcoin.
           </h5> */}
         </div>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickRegister}>
           <span className="text-2xl">Register</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
           <span className="text-2xl">Transfer on Polygon</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
           <span className="text-2xl">Transfer on Gnosis Chain <br />(via bridge)</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
+        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickTransfer}>
           <span className="text-2xl">Transfer on Aurora / Near <br />(via bridge)</span>
         </button>
       </div>
