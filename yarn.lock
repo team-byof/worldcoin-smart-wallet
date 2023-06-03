@@ -2874,6 +2874,11 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-primitive" "1.0.2"
 
+"@remix-run/router@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.6.2.tgz#bbe75f8c59e0b7077584920ce2cc76f8f354934d"
+  integrity sha512-LzqpSrMK/3JBAVBI9u3NWtOhWNw5AMQfrUFYB0+bDHTSw17z++WJLsPsxAuK+oSddsxk4d7F/JcdDPM1M5YAhA==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.npmjs.org/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz"
@@ -4302,7 +4307,7 @@
     framer-motion "^7.6.7"
     js-sha3 "^0.8.0"
     phone "^3.1.37"
-    posthog-js-lite "2.0.0"
+    posthog-js-lite "2.4.0"
     qr-code-styling-new "^1.6.1"
     qrcode "^1.5.1"
     react-countdown "^2.3.4"
@@ -12119,10 +12124,10 @@ postcss@^8.0.9, postcss@^8.3.5, postcss@^8.4.12, postcss@^8.4.19, postcss@^8.4.4
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-posthog-js-lite@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/posthog-js-lite/-/posthog-js-lite-2.0.0.tgz"
-  integrity sha512-q6y0LWF7/faYtsMpX8tLoYDBsvhinMIVoVuubaK4K/md4VYYrfWgiOuhmqj48L2fWkkU2Qjv1gSuA9lsqrcVNw==
+posthog-js-lite@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/posthog-js-lite/-/posthog-js-lite-2.4.0.tgz#9212a1767b356d47906fb30bd52542798a20783b"
+  integrity sha512-BslsygPtDEeFIIRgW9za0mzTtZGv5iy5HrmpRd5KIUPtd3J24mItFMhf8cU9GguqS+oq/Dugt2K2ijpC8mSlzQ==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -12487,6 +12492,21 @@ react-remove-scroll@2.5.5:
     tslib "^2.1.0"
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
+
+react-router-dom@^6.11.2:
+  version "6.11.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.11.2.tgz#324d55750ffe2ecd54ca4ec6b7bc7ab01741f170"
+  integrity sha512-JNbKtAeh1VSJQnH6RvBDNhxNwemRj7KxCzc5jb7zvDSKRnPWIFj9pO+eXqjM69gQJ0r46hSz1x4l9y0651DKWw==
+  dependencies:
+    "@remix-run/router" "1.6.2"
+    react-router "6.11.2"
+
+react-router@6.11.2:
+  version "6.11.2"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.11.2.tgz#006301c4da1a173d7ad76b7ecd2da01b9dd3837a"
+  integrity sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg==
+  dependencies:
+    "@remix-run/router" "1.6.2"
 
 react-scripts@5.0.1:
   version "5.0.1"
