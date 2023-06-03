@@ -50,7 +50,7 @@ export function Home(): JSX.Element {
     <div className="flex flex-col text-center">
       <div className="space-y-2 p-8">
         <h3 className="text-3xl text-gray-700 font-semibold text-center">
-        Cross-chain Worldcoin AA Wallet 👀
+        Cross-chain <br/> Worldcoin 👀 <br/> AA Wallet
         </h3>
         <h5 className="text text-gray-500 font text-center">
         Bye bye private keys! 👋 <br /> <br />Chain-agnostic account abstraction wallet using Worldcoin.

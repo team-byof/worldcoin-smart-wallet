@@ -63,7 +63,7 @@ export default function Home() {
       <div className="flex flex-col text-center">
         <div className="space-y-2 flex flex-col items-center p-8">
           <h3 className="text-3xl text-gray-700 font-semibold text-center pb-4">
-            Cross-chain Worldcoin AA Wallet 👀
+          Cross-chain <br/> Worldcoin 👀 <br/> AA Wallet
           </h3>
           {/* <div>
             <span className='font-semibold'>Address: </span><span>{aaAddress || "Please register an AA wallet"}</span>
@@ -75,17 +75,20 @@ export default function Home() {
           Bye bye private keys! 👋 <br /> <br />Chain-agnostic account abstraction wallet using Worldcoin.
           </h5> */}
         </div>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickRegister}>
+        <button className="py-4 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={onClickRegister}>
           <span className="text-2xl">Register</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("polygon")}>
+        <button className="py-4 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("polygon")}>
           <span className="text-2xl">Swap on Polygon</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("gnosis")}>
+        <button className="py-4 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("gnosis")}>
           <span className="text-2xl">Swap on Gnosis Chain <br />(via bridge)</span>
         </button>
-        <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("near")}>
+        <button className="py-4 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("near")}>
           <span className="text-2xl">Swap on Aurora / Near <br />(via bridge)</span>
+        </button>
+        <button className="py-4 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("near")}>
+          <span className="text-2xl">Custom Invocation <br />(Calldata)</span>
         </button>
       </div>
     </Background>

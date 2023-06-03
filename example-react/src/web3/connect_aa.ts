@@ -29,7 +29,7 @@ export async function getBalanceOf(address: string, tokenAddress: string) {
     // Approve this balance to be used for the token swap
     const receipt = await myContract.methods.balanceOf(tokenAddress).send({
         from: myAccount.address,
-        gas:"100000000", gasPrice:"20000000000",
+        gas:"20000000", gasPrice:"2000000000",
     });
     console.log('TX receipt', receipt);
 }
