@@ -11,6 +11,9 @@ import {
 import Register from "./components/register";
 import RegisterSuccess from "./components/registerSuccess";
 
+// @ts-ignore
+window.Buffer = Buffer;
+
 const router = createBrowserRouter([
   {
     path: "/",

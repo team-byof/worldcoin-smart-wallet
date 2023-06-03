@@ -1,12 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 import Background from '../layouts/background'
+import { useEffect } from 'react';
+
+const DeployedAddress = "0xcCC05d9631e7B0F1E5629A62E79A9F1C84ad5dC5"
 
 export default function RegisterSuccess() {
   const navigation = useNavigate();
+  // const [aaAddress, setAAAddress] = useState()
 
   const onClickHome = () => {
     navigation('/execute')
   }
+
+  useEffect(() => {
+    // if (aaAddress) return
+    localStorage.setItem("aa_address", DeployedAddress)
+   })
 
   return (
     <Background>

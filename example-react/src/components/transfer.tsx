@@ -2,6 +2,8 @@ import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Background from '../layouts/background'
 
+import {getBalanceOf} from '../web3/connect_aa';
+
 export default function Transfer() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -9,9 +11,9 @@ export default function Transfer() {
   const onClickBack = () => {
     navigate('/execute')
   }
-  
-  const onClickTransfer = () => {
 
+  const onClickTransfer = () => {
+    getBalanceOf(process.env.PUBLIC_KEY || "", "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174")
   }
 
   const getChainName = (chain: string) => {

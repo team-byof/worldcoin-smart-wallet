@@ -1,5 +1,5 @@
 'use client'
-import {useCallback} from 'react'
+import {useCallback, useEffect, useState} from 'react'
 import Background from './layouts/background'
 import { CredentialType, IDKitWidget, ISuccessResult, solidityEncode } from "@worldcoin/idkit";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,18 @@ const credentialType = CredentialType.Phone
 export function Home(): JSX.Element {
   const navigate = useNavigate();
 
-  const [cred, saveCred] = useLocalStorage("worldcoin", null);
+  // const [cred, saveCred] = useLocalStorage("worldcoin", null);
+
+  const [credential, setCredential] = useState()
+
+  useEffect(() => {
+    if (credential) return
+    const credRaw = localStorage.getItem("cred")
+    if (!credRaw) return
+    const cred = JSON.parse(credRaw)
+    setCredential(cred)
+    navigate('/execute')
+  })
 
   const handleProof = useCallback((result: ISuccessResult) => {
 		return new Promise<void>((resolve) => {
@@ -20,10 +31,6 @@ export function Home(): JSX.Element {
 			// NOTE: Example of how to decline the verification request and show an error message to the user
 		});
 	}, []);
-
-  if (cred) {
-    navigate('/execute')
-  }
 
 	const onSuccess = (result: ISuccessResult) => {
 		console.log(result);
@@ -34,7 +41,8 @@ export function Home(): JSX.Element {
       signal,
       credential_type: credentialType,
     }
-    saveCred(u)
+    // saveCred(u)
+    localStorage.setItem("cred", JSON.stringify(u))
     navigate(`/execute`)
 	};
 

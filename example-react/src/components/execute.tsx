@@ -1,7 +1,7 @@
 'use client'
 import Background from '../layouts/background'
-import { useLocalStorage } from "../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   // const params = useSearchParams();
@@ -25,8 +25,25 @@ export default function Home() {
   // } = params;
 
   // console.log(proof)
+  const [credential, setCredential] = useState()
+  const [aaAddress, setAAAddress] = useState("")
+
   const navigate = useNavigate();
-  const [cred, saveCred] = useLocalStorage("worldcoin", null)
+
+  useEffect(() => {
+    if (credential) return
+    const credRaw = localStorage.getItem("cred")
+    if (!credRaw) return
+    const cred = JSON.parse(credRaw)
+    setCredential(cred)
+  }, [credential])
+
+  useEffect(() => {
+    if (aaAddress) return
+    const address = localStorage.getItem("aa_address")
+    if (!address) return
+    setAAAddress(address)
+  }, [aaAddress])
 
   const onLogOut = () => {
     localStorage.clear()
@@ -45,10 +62,12 @@ export default function Home() {
     <Background>
       <div className="flex flex-col text-center">
         <div className="space-y-2 flex flex-col items-center p-8">
-          <h3 className="text-3xl text-gray-700 font-semibold text-center">
+          <h3 className="text-3xl text-gray-700 font-semibold text-center pb-4">
             Cross-chain Worldcoin AA Wallet 👀
           </h3>
-          <span>{JSON.stringify(cred)}</span>
+          {/* <div>
+            <span className='font-semibold'>Address: </span><span>{aaAddress || "Please register an AA wallet"}</span>
+          </div> */}
           <button onClick={onLogOut} className="py-4 items-center w-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300">
             <span className="text-sm">Log Out</span>
           </button>
@@ -60,13 +79,13 @@ export default function Home() {
           <span className="text-2xl">Register</span>
         </button>
         <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("polygon")}>
-          <span className="text-2xl">Transfer on Polygon</span>
+          <span className="text-2xl">Swap on Polygon</span>
         </button>
         <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("gnosis")}>
-          <span className="text-2xl">Transfer on Gnosis Chain <br />(via bridge)</span>
+          <span className="text-2xl">Swap on Gnosis Chain <br />(via bridge)</span>
         </button>
         <button className="py-8 h-1/3 border-4 rounded-2xl hover:bg-pink-100 border-pink-300" onClick={() => onClickTransfer("near")}>
-          <span className="text-2xl">Transfer on Aurora / Near <br />(via bridge)</span>
+          <span className="text-2xl">Swap on Aurora / Near <br />(via bridge)</span>
         </button>
       </div>
     </Background>
